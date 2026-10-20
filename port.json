@@ -1,0 +1,45 @@
+{
+  "$schema": "https://living-code.dev/port.schema.json",
+  "schemaVersion": 1,
+  "name": "delta",
+  "slug": "delta",
+  "group": "CLI & TUI",
+  "emoji": "🔺",
+  "description": "Living Code for delta. Repository-owned theme files, installation instructions and four color flavors.",
+  "homepage": "https://github.com/dandavison/delta",
+  "quick": "See installation instructions",
+  "aliases": [
+    "delta"
+  ],
+  "flavors": [
+    "night",
+    "frost",
+    "paper",
+    "signal"
+  ],
+  "files": [
+    "living-code.gitconfig"
+  ],
+  "images": [
+    {
+      "flavor": "night",
+      "path": "images/night.png",
+      "alt": "delta running Living Code Night"
+    },
+    {
+      "flavor": "frost",
+      "path": "images/frost.png",
+      "alt": "delta running Living Code Frost"
+    },
+    {
+      "flavor": "paper",
+      "path": "images/paper.png",
+      "alt": "delta running Living Code Paper"
+    },
+    {
+      "flavor": "signal",
+      "path": "images/signal.png",
+      "alt": "delta running Living Code Signal"
+    }
+  ]
+}

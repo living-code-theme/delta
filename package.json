@@ -1,0 +1,26 @@
+{
+  "name": "living-code-delta",
+  "version": "0.1.1",
+  "description": "Living Code for delta. Repository-owned theme files, installation instructions and four color flavors.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Living Code",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/living-code-theme/delta.git"
+  },
+  "homepage": "https://github.com/living-code-theme/delta",
+  "private": true,
+  "packageManager": "pnpm@12.9.0",
+  "engines": {
+    "node": ">=22.22"
+  },
+  "livingCode": {
+    "kind": "files"
+  },
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "test": "node scripts/check.mjs",
+    "package": "node scripts/package.mjs"
+  }
+}
