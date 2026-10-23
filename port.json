@@ -5,11 +5,12 @@
   "slug": "delta",
   "group": "CLI & TUI",
   "emoji": "🔺",
-  "description": "Living Code for delta. Repository-owned theme files, installation instructions and four color flavors.",
+  "description": "Living Code for delta: diff backgrounds, word highlights, headers and gutters, paired with the bat syntax themes, in four flavors.",
   "homepage": "https://github.com/dandavison/delta",
-  "quick": "See installation instructions",
+  "quick": "Install the bat themes and the delta gitconfig",
   "aliases": [
-    "delta"
+    "delta",
+    "git-delta"
   ],
   "flavors": [
     "night",

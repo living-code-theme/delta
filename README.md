@@ -5,7 +5,7 @@
 
 # 🔺 Living Code for delta
 
-**Calm slate. Living color.**<br>Living Code for delta. Repository-owned theme files, installation instructions and four color flavors.
+**Calm slate. Living color.**<br>Living Code for delta: diff backgrounds, word highlights, headers and gutters, paired with the bat syntax themes, in four flavors.
 
 <img src="https://raw.githubusercontent.com/living-code-theme/core/main/assets/swatches/00a692.svg" width="14" height="14" alt="teal #00a692"> <img src="https://raw.githubusercontent.com/living-code-theme/core/main/assets/swatches/52d7c1.svg" width="14" height="14" alt="mint #52d7c1"> <img src="https://raw.githubusercontent.com/living-code-theme/core/main/assets/swatches/9ae0dd.svg" width="14" height="14" alt="aqua #9ae0dd"> <img src="https://raw.githubusercontent.com/living-code-theme/core/main/assets/swatches/80b6d3.svg" width="14" height="14" alt="steel #80b6d3"> <img src="https://raw.githubusercontent.com/living-code-theme/core/main/assets/swatches/8acb83.svg" width="14" height="14" alt="moss #8acb83"> <img src="https://raw.githubusercontent.com/living-code-theme/core/main/assets/swatches/f0be6d.svg" width="14" height="14" alt="amber #f0be6d"> <img src="https://raw.githubusercontent.com/living-code-theme/core/main/assets/swatches/e18c5f.svg" width="14" height="14" alt="copper #e18c5f"> <img src="https://raw.githubusercontent.com/living-code-theme/core/main/assets/swatches/e96560.svg" width="14" height="14" alt="flare #e96560"> <img src="https://raw.githubusercontent.com/living-code-theme/core/main/assets/swatches/bf91cd.svg" width="14" height="14" alt="orchid #bf91cd"> <img src="https://raw.githubusercontent.com/living-code-theme/core/main/assets/swatches/ddaec3.svg" width="14" height="14" alt="rose #ddaec3">
 
@@ -47,9 +47,10 @@ Select any preview to view the image at full size.
 
 ## Installation
 
-First install the [tmTheme port](https://github.com/living-code-theme/tmtheme) into bat's cache for syntax colors. This port adds delta's diff backgrounds, word highlights, headers and gutters.
+Requires [delta](https://github.com/dandavison/delta) and [bat](https://github.com/sharkdp/bat): delta reads syntax themes from bat's cache. This one block installs the [bat port's](https://github.com/living-code-theme/tmtheme) syntax themes, adds this port's diff backgrounds, word highlights, headers and gutters, and selects a flavor:
 
 ```sh
+curl -fsSL --create-dirs --output-dir "$(bat --config-dir)/themes" -O "https://raw.githubusercontent.com/living-code-theme/tmtheme/main/living-code-{night,frost,paper,signal}.tmTheme" && bat cache --build
 curl -fsSL --create-dirs -o "${XDG_CONFIG_HOME:-$HOME/.config}/delta/living-code.gitconfig" "https://raw.githubusercontent.com/living-code-theme/delta/main/living-code.gitconfig"
 git config --global --add include.path "${XDG_CONFIG_HOME:-$HOME/.config}/delta/living-code.gitconfig"
 git config --global core.pager delta
@@ -57,9 +58,9 @@ git config --global interactive.diffFilter "delta --color-only"
 git config --global delta.features living-code-night
 ```
 
-That includes the file in `~/.gitconfig` and selects a flavor. Skip the `core.pager` and `diffFilter` lines if delta is already set up.
+That includes the file in `~/.gitconfig` and selects a flavor. Skip the `core.pager` and `diffFilter` lines if delta is already set up. If bat already has the Living Code themes, skip the first line.
 
-Each flavor is a delta feature: `living-code-night`, `living-code-signal`, `living-code-frost`, `living-code-paper`.
+Each flavor is a delta feature: `living-code-night`, `living-code-signal`, `living-code-frost`, `living-code-paper`. It sets `syntax-theme` itself, so no separate `syntax-theme` setting is needed; remove any existing one under `[delta]` that would override it.
 
 ## Flavors
 
@@ -115,7 +116,7 @@ See [delta's documentation](https://github.com/dandavison/delta) for application
 
 ## Compatibility
 
-This port supplies theme files for delta, not the application itself. Install the application separately and follow the installation instructions for its supported configuration format.
+This port supplies a delta gitconfig, not delta itself. Its syntax colors come from the bat port's `.tmTheme` files in bat's cache; without them delta falls back to its default syntax theme.
 
 ## Contributing
 

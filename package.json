@@ -1,7 +1,7 @@
 {
   "name": "living-code-delta",
   "version": "0.1.1",
-  "description": "Living Code for delta. Repository-owned theme files, installation instructions and four color flavors.",
+  "description": "Living Code for delta: diff backgrounds, word highlights, headers and gutters, paired with the bat syntax themes, in four flavors.",
   "type": "module",
   "license": "MIT",
   "author": "Living Code",
