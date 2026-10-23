@@ -47,10 +47,10 @@ Select any preview to view the image at full size.
 
 ## Installation
 
-Requires [delta](https://github.com/dandavison/delta) and [bat](https://github.com/sharkdp/bat): delta reads syntax themes from bat's cache. This one block installs the [bat port's](https://github.com/living-code-theme/tmtheme) syntax themes, adds this port's diff backgrounds, word highlights, headers and gutters, and selects a flavor:
+Requires [delta](https://github.com/dandavison/delta) and [bat](https://github.com/sharkdp/bat): delta reads syntax themes from bat's cache. This one block installs the [bat port's](https://github.com/living-code-theme/bat) syntax themes, adds this port's diff backgrounds, word highlights, headers and gutters, and selects a flavor:
 
 ```sh
-curl -fsSL --create-dirs --output-dir "$(bat --config-dir)/themes" -O "https://raw.githubusercontent.com/living-code-theme/tmtheme/main/living-code-{night,frost,paper,signal}.tmTheme" && bat cache --build
+curl -fsSL --create-dirs --output-dir "$(bat --config-dir)/themes" -O "https://raw.githubusercontent.com/living-code-theme/bat/main/living-code-{night,frost,paper,signal}.tmTheme" && bat cache --build
 curl -fsSL --create-dirs -o "${XDG_CONFIG_HOME:-$HOME/.config}/delta/living-code.gitconfig" "https://raw.githubusercontent.com/living-code-theme/delta/main/living-code.gitconfig"
 git config --global --add include.path "${XDG_CONFIG_HOME:-$HOME/.config}/delta/living-code.gitconfig"
 git config --global core.pager delta
